@@ -77,6 +77,7 @@ class Palm2(NeonLLM):
         return self.role
 
     def warmup(self):
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = self.api_key_path
         self.model
         self.embedding
 
