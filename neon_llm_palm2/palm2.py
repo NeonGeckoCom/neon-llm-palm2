@@ -164,7 +164,7 @@ class Palm2(NeonLLM):
         """
         response = self.ask(question, [], persona=persona)
         texts = [response] + answers
-        embeddings_obj = self._embedding.get_embeddings(texts)
+        embeddings_obj = self.embedding.get_embeddings(texts)
         embeddings = [embedding.values for embedding in embeddings_obj]
         question_embeddings = embeddings[0]
         answers_embeddings = embeddings[1:]
