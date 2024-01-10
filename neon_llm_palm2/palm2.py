@@ -59,13 +59,13 @@ class Palm2(NeonLLM):
     @property
     def model(self) -> ChatModel:
         if self._model is None:
-            self._model = ChatModel.from_pretrained("chat-bison@001")
+            self._model = ChatModel.from_pretrained("chat-bison")
         return self._model
     
     @property
     def embedding(self) -> TextEmbeddingModel:
         if self._embedding is None:
-            self._embedding = TextEmbeddingModel.from_pretrained("textembedding-gecko@001")
+            self._embedding = TextEmbeddingModel.from_pretrained("textembedding-gecko@latest")
         return self._embedding
 
     @property
