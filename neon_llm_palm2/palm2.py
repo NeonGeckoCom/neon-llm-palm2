@@ -42,11 +42,21 @@ class Palm2(NeonLLM):
     def __init__(self, config):
         super().__init__(config)
         self._embedding = None
+        self._context_depth = 0
+
         self.role = config["role"]
         self.context_depth = config["context_depth"]
         self.max_tokens = config["max_tokens"]
         self.api_key_path = config["key_path"]
         self.warmup()
+
+    @property
+    def context_depth(self):
+        return self._context_depth
+
+    @context_depth.setter
+    def context_depth(self, value):
+        self._context_depth = value + value % 2
 
     @property
     def tokenizer(self) -> None:
