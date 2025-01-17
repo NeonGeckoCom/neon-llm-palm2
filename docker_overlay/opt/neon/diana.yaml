@@ -5,10 +5,15 @@ logs:
       - pika
     warning:
       - filelock
-    info: []
+      - watchdog
+      - httpcore
+    info:
+      - openai
+      - asyncio
+      - matplotlib
     debug: []
 MQ:
-  server: api.neon.ai
+  server: neon-rabbitmq
   port: 5672
   users:
     mq_handler:
@@ -19,3 +24,7 @@ LLM_PALM2:
   context_depth: 3
   max_tokens: 100
   num_parallel_processes: 2
+llm_bots:
+  palm2:
+    - description: You are trying to give a short answer in less than 40 words.
+      name: assistant
