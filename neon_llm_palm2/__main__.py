@@ -25,14 +25,16 @@
 # SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from neon_llm_palm2.rmq import Palm2MQ
+from neon_utils.log_utils import init_log
 
 
 def main():
+    init_log(log_name="gemini")
+
     # Run RabbitMQ
-    palm2MQ = Palm2MQ()
-    palm2MQ.run(run_sync=False, run_consumers=True,
-                  daemonize_consumers=True)
-    palm2MQ.observer_thread.join()
+    palm2_mq_service = Palm2MQ()
+    palm2_mq_service.run(run_sync=False, run_consumers=True,
+                         daemonize_consumers=True)
 
 
 if __name__ == "__main__":
