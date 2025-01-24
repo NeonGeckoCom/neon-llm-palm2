@@ -29,7 +29,7 @@ from neon_utils.log_utils import init_log
 
 
 def main():
-    init_log(log_name="gemini")
+    init_log(log_name="palm2")
 
     # Run RabbitMQ
     palm2_mq_service = Palm2MQ()
