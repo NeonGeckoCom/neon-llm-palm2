@@ -1,5 +1,5 @@
-# NeonAI LLM ChatGPT
-Proxies API calls to ChatGPT.
+# NeonAI LLM Palm2
+Proxies API calls to Google Palm2.
 
 ## Request Format
 API requests should include `history`, a list of tuples of strings, and the current
@@ -25,20 +25,20 @@ MQ:
   port: <MQ Port>
   server: <MQ Hostname or IP>
   users:
-    mq-chatgpt-api:
-      password: <neon_chatgpt user's password>
-      user: neon_chatgpt
-ChatGPT:
-  key: ""
-  model: "gpt-3.5-turbo"
+    neon_llm_palm2:
+      password: <neon_palm2 user's password>
+      user: neon_palm2
+LLM_PALM2:
+  key_path: ""
   role: "You are trying to give a short answer in less than 40 words."
   context_depth: 3
   max_tokens: 100
+  num_parallel_processes: 2
 ```
 
 For example, if your configuration resides in `~/.config`:
 ```shell
 export CONFIG_PATH="/home/${USER}/.config"
-docker run -v ${CONFIG_PATH}:/config neon_llm_chatgpt
+docker run -v ${CONFIG_PATH}:/config neon_llm_palm2
 ```
 > Note: If connecting to a local MQ server, you may need to specify `--network host`

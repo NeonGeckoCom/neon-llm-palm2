@@ -1,6 +1,6 @@
 # NEON AI (TM) SOFTWARE, Software Development Kit & Application Framework
 # All trademark and other rights reserved by their respective owners
-# Copyright 2008-2022 Neongecko.com Inc.
+# Copyright 2008-2025 Neongecko.com Inc.
 # Contributors: Daniel McKnight, Guy Daniels, Elon Gasper, Richard Leeds,
 # Regina Bloomstine, Casimiro Ferreira, Andrii Pernatii, Kirill Hrymailo
 # BSD-3 License
@@ -67,12 +67,12 @@ with open(path.join(BASE_PATH, "version.py"), "r", encoding="utf-8") as v:
                 version = line.split("'")[1]
 
 setup(
-    name='neon-llm-chatgpt',
+    name='neon-llm-palm2',
     version=version,
-    description='LLM service for Chat GPT',
+    description='LLM service for Palm2',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='https://github.com/NeonGeckoCom/neon-llm-chatgpt',
+    url='https://github.com/NeonGeckoCom/neon-llm-palm2',
     author='Neongecko',
     author_email='developers@neon.ai',
     license='BSD-3.0',
@@ -85,7 +85,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'neon-llm-chatgpt=neon_llm_chatgpt.__main__:main'
+            'neon-llm-palm2=neon_llm_palm2.__main__:main'
         ]
     }
 )
